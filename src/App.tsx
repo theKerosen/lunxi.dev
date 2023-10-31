@@ -16,6 +16,7 @@ const App = () => {
         />
         <link rel="icon" type="image/png" sizes="16x16" href="/icon.png" />
         <link rel="stylesheet" href="src/App.css" />
+        <link rel="stylesheet" href="src/index.css" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;display=swap"
@@ -28,7 +29,6 @@ const App = () => {
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         />
-        <link rel="stylesheet" href="src/index.css" />
       </head>
       <body
         id="page-top"
