@@ -1,96 +1,19 @@
 import { useEffect } from "react";
-import AOS from "aos";
 import "aos/dist/aos.css";
-import * as bootstrap from "bootstrap";
-import TurnstileForm from "./turnstile";
+import TurnstileForm from "./components/turnstile";
+import mainApp from "./components/mainApp";
 
 const App = () => {
-  useEffect(() => {
-    window.innerWidth < 768 &&
-      Array.from(
-        document.querySelectorAll("[data-bss-disabled-mobile]")
-      ).forEach((element) => {
-        if (element instanceof HTMLElement) {
-          element.classList.remove("animated");
-          element.removeAttribute("data-bss-hover-animate");
-          element.removeAttribute("data-aos");
-        }
-      });
-    AOS.init();
-    Array.from(document.querySelectorAll("[data-bss-hover-animate]")).forEach(
-      (element) => {
-        element.addEventListener("mouseenter", (event) => {
-          if (event.target instanceof HTMLElement) {
-            event.target.classList.add(
-              "animated",
-              event.target.dataset.bssHoverAnimate as string
-            );
-          }
-        });
-        element.addEventListener("mouseleave", (event) => {
-          if (event.target instanceof HTMLElement) {
-            event.target.classList.remove(
-              "animated",
-              event.target.dataset.bssHoverAnimate as string
-            );
-          }
-        });
-      }
-    );
-    const scrollToTopElement = document.querySelector(".scroll-to-top");
-    if (scrollToTopElement instanceof HTMLElement) {
-      window.addEventListener("scroll", () => {
-        const scrollOffset = window.scrollY;
-        scrollToTopElement.style.display =
-          scrollOffset > 100 ? "block" : "none";
-      });
-    }
-    const mainNav = document.querySelector("#mainNav");
-
-    if (mainNav) {
-      const navCollapse = mainNav.querySelector(".navbar-collapse");
-      if (navCollapse) {
-        const collapse = new bootstrap.Collapse(navCollapse, {
-          toggle: false,
-        });
-        const navItems = navCollapse.querySelectorAll("a");
-        for (var item of navItems) {
-          item.addEventListener("click", () => {
-            collapse.hide();
-          });
-        }
-      }
-      const collapseNavbar = function () {
-        var scrollTop =
-          window.scrollY !== undefined
-            ? window.scrollY
-            : (
-                document.documentElement ||
-                document.body.parentNode ||
-                document.body
-              ).scrollTop;
-
-        if (scrollTop > 100) {
-          mainNav.classList.add("navbar-shrink");
-        } else {
-          mainNav.classList.remove("navbar-shrink");
-        }
-      };
-      collapseNavbar();
-      document.addEventListener("scroll", collapseNavbar);
-    }
-  }, []);
+  useEffect(() => mainApp(), []);
 
   return (
-    <html>
+    <html lang="pt-br">
       <head>
         <meta charSet="utf-8" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
         />
-        <title>Lunxi — Desenvolvedor Backend</title>
-        <meta name="description" content="Apenas um desenvolvedor de Node.js" />
         <link rel="icon" type="image/png" sizes="16x16" href="/icon.png" />
         <link rel="stylesheet" href="src/App.css" />
         <link
@@ -106,10 +29,6 @@ const App = () => {
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         />
         <link rel="stylesheet" href="src/index.css" />
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
-        />
       </head>
       <body
         id="page-top"
@@ -117,6 +36,19 @@ const App = () => {
         data-bs-target="#mainNav"
         data-bs-offset="72"
       >
+        <script
+          src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        ></script>
+        <script
+          src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        ></script>
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        ></script>
+
         <nav
           className="navbar navbar-light navbar-expand-lg fixed-top bg-secondary text-uppercase"
           id="mainNav"
@@ -174,19 +106,15 @@ const App = () => {
           </div>
         </nav>
         <header className="text-center text-white bg-primary masthead">
-          <img
-            className="img-fluid d-block mx-auto mb-5"
-            data-bss-hover-animate="bounce"
-            src="/cdf21fc1ca199304573dc8fcd115ab5c.jpg"
-            style={{ width: "250px", height: "225px", borderRadius: "5px" }}
-            loading="lazy"
-          />
           <div className="container">
             <h1>Lunxi</h1>
-            <hr className="star-light" style={{ transform: "scale(1.25)" }} />
+            <hr
+              className="star-light"
+              style={{ transform: "scale(2)", marginTop: "80px" }}
+            />
             <h2 className="font-weight-light mb-0" style={{ height: "0px" }}>
-              JS/TS Backend - Discord.js - Steam Integration - RESTful APIs -
-              Puppeteer
+              3+ anos de experiência com JavaScript & TypeScript
+              <br />
             </h2>
           </div>
         </header>
@@ -215,8 +143,8 @@ const App = () => {
                     <h4>Astra Luna</h4>
                   </a>
                   <p>
-                    Um BOT de Discord com foco&nbsp; em manter o servidor do
-                    YouTuber <em>Eu Vlogueiro.</em>
+                    Um BOT de Discord com foco em melhorar minhas habilidades
+                    com a library "Discord.js"
                   </p>
                 </div>
               </div>
@@ -228,8 +156,8 @@ const App = () => {
                     <h4>Aridium API</h4>
                   </a>
                   <p>
-                    Uma API RESTful para dados do BUFF163 &amp; Dash Skins.
-                    (PRIVADO)
+                    Uma API RESTful para dados do BUFF163 & Dash Skins. (Em
+                    desenvolvimento)
                   </p>
                 </div>
               </div>
@@ -242,8 +170,8 @@ const App = () => {
                   </a>
                   <p>
                     Um BOT de Discord que usa o Projeto Aridium como API para
-                    buscar os melhores preços e descontos no BUFF163 &amp; Dash
-                    Skins. (In-Dev)
+                    buscar os melhores preços e descontos no BUFF163 & Dash
+                    Skins.
                   </p>
                 </div>
               </div>
@@ -251,10 +179,13 @@ const App = () => {
             <div className="col" data-aos="slide-left">
               <div className="d-flex flex-column flex-lg-row">
                 <div className="py-4 py-lg-0 px-lg-4">
-                  <h4>Ignity&nbsp;</h4>
+                  <a target="_blank" href="https://github.com/Lunixyz/Ares-API">
+                    <h4>Ares API</h4>
+                  </a>
                   <p>
-                    Um BOT de Counter-Strike que pode obter informações de
-                    jogadores usando a Steam. (In-Dev)
+                    Uma API que tem a habilidade de obter dados como o status
+                    dos servidores do Counter-Strike e várias informações da
+                    Steam.
                   </p>
                 </div>
               </div>
@@ -287,8 +218,8 @@ const App = () => {
                     de desempenho e escalabilidade, análise de código,
                     refatoração, monitoramento e depuração de aplicações em
                     produção, além de lidar com requisitos de
-                    internacionalização e localização. Sou bom em explicar
-                    conceitos técnicos de forma clara e concisa.
+                    internacionalização e localização. Tenho habilidade em
+                    explicar conceitos técnicos de forma clara e concisa.
                   </span>
                   <br />
                   <br />

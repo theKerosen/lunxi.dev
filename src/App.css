@@ -166,12 +166,8 @@ p {
 }
 ul {
   padding-left: 2rem;
-}
-ul {
   margin-top: 0;
   margin-bottom: 1rem;
-}
-ul ul {
   margin-bottom: 0;
 }
 strong {
@@ -194,13 +190,10 @@ pre {
   font-size: 1em;
   direction: ltr;
   unicode-bidi: bidi-override;
-}
-pre {
   display: block;
   margin-top: 0;
   margin-bottom: 1rem;
   overflow: auto;
-  font-size: 0.875em;
 }
 img,
 svg {
@@ -222,9 +215,6 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
-}
-button {
-  text-transform: none;
 }
 [role="button"] {
   cursor: pointer;
@@ -272,10 +262,6 @@ textarea {
 }
 ::file-selector-button {
   font: inherit;
-}
-::-webkit-file-upload-button {
-  font: inherit;
-  -webkit-appearance: button;
 }
 [hidden] {
   display: none !important;
@@ -1387,33 +1373,12 @@ textarea {
 .form-control:hover:not(:disabled):not([readonly])::file-selector-button {
   background-color: #dde0e3;
 }
-.form-control::-webkit-file-upload-button {
-  padding: 0.375rem 0.75rem;
-  margin: -0.375rem -0.75rem;
-  -webkit-margin-end: 0.75rem;
-  margin-inline-end: 0.75rem;
-  color: #212529;
-  background-color: #e9ecef;
-  pointer-events: none;
-  border-color: inherit;
-  border-style: solid;
-  border-width: 0;
-  border-inline-end-width: 1px;
-  border-radius: 0;
-  -webkit-transition: color 0.15s ease-in-out,
-    background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
+
 @media (prefers-reduced-motion: reduce) {
   .form-control::-webkit-file-upload-button {
     -webkit-transition: none;
     transition: none;
   }
-}
-.form-control:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
-  background-color: #dde0e3;
 }
 .form-control-sm {
   min-height: calc(1.5em + 0.5rem + 2px);
@@ -1428,12 +1393,6 @@ textarea {
   margin-inline-end: 0.5rem;
 }
 .form-control-sm::file-selector-button {
-  padding: 0.25rem 0.5rem;
-  margin: -0.25rem -0.5rem;
-  -webkit-margin-end: 0.5rem;
-  margin-inline-end: 0.5rem;
-}
-.form-control-sm::-webkit-file-upload-button {
   padding: 0.25rem 0.5rem;
   margin: -0.25rem -0.5rem;
   -webkit-margin-end: 0.5rem;
@@ -1456,15 +1415,6 @@ textarea {
   margin: -0.5rem -1rem;
   -webkit-margin-end: 1rem;
   margin-inline-end: 1rem;
-}
-.form-control-lg::-webkit-file-upload-button {
-  padding: 0.5rem 1rem;
-  margin: -0.5rem -1rem;
-  -webkit-margin-end: 1rem;
-  margin-inline-end: 1rem;
-}
-textarea.form-control {
-  min-height: calc(1.5em + 0.75rem + 2px);
 }
 textarea.form-control-sm {
   min-height: calc(1.5em + 0.5rem + 2px);
@@ -1990,9 +1940,6 @@ textarea.form-control-lg {
 .card-img,
 .card-img-top {
   width: 100%;
-}
-.card-img,
-.card-img-top {
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
 }
@@ -2030,9 +1977,6 @@ textarea.form-control-lg {
 }
 .page-item:not(:first-child) .page-link {
   margin-left: -1px;
-}
-.page-link {
-  padding: 0.375rem 0.75rem;
 }
 .page-item:first-child .page-link {
   border-top-left-radius: 0.25rem;
