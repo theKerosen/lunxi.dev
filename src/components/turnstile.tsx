@@ -59,7 +59,7 @@ function TurnstileForm() {
             </div>
             <div>
               {" "}
-              <div className="container mb-auto">
+              <div className="container mb-3">
                 <div className="row col-md-auto mx-auto">
                   {resetTurnstile && (
                     <Turnstile
