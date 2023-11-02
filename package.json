@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@marsidev/react-turnstile": "^0.2.3",
+    "@marsidev/react-turnstile": "^0.2.4",
     "@popperjs/core": "^2.11.8",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.1",
